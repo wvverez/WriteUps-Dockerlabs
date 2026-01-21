@@ -58,9 +58,9 @@ Vemos que tenemos Openssh 9.2p1 por ahí no podemos hacer mucho vamos a acceder 
 
 <pre>
   <code>
-    #!/usr/bin/env python3
-    # Creador: wvverez
-    # https://github.com/wvverez
+#!/usr/bin/env python3
+# Creador: wvverez
+# https://github.com/wvverez
     
 import requests
 import sys
@@ -146,3 +146,8 @@ if __name__ == "__main__":
 
   </code>
 </pre>
+
+<img width="1605" height="743" alt="image" src="https://github.com/user-attachments/assets/85fda5a0-bb1c-41a5-9e99-b328dce386a6" />
+
+Ya que tenemos posibles usuarios del sistema vamos a realizar un ataque de fuerza bruta para ver si algún usuario tiene su misma contraseña de contraseña.
+
