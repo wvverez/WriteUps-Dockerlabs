@@ -1,4 +1,11 @@
+# CTF:
 
+<img width="1218" height="720" alt="image" src="https://github.com/user-attachments/assets/7c4930f1-d325-42be-ad23-0e89dd886a37" />
+
+Nombre: Bola
+SO: Linux
+Dificultad: Medio
+Creadores: El pinguino de Mario
 
 # Enumeración 
 
