@@ -32,8 +32,19 @@ Nmap done: 1 IP address (1 host up) scanned in 1.15 seconds
   </code>
 </pre>
 
--p- : 
---open:
+-p- : Escaneo de todos los puertos (Los 65535)
+
+--open: Para que nos muestre unicamente los que esten abiertos.
+
+-sS : Para hacer un escaneo mas sigiloso y más rapido
+
+--min-rate 5000: Para indicarle que no vaya mas despacio que 5000 paquetes por segundo
+
+-n : Para indicarle que no queremos que haga resolucion DNS es decir que no intente convertir direcciones IP a dominios.
+
+-Pn : No realize host discovering ya que suponemos que la maquina esta levantada
+
+-oN : guardar el reporte en un archivo 
 
 
 
