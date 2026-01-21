@@ -105,7 +105,7 @@ def obtener_usuarios():
             if response.status_code == 200:
                 data = response.json()
                 username = data.get("username")
-                if username:  # Corregido: "usernamme" -> "username"
+                if username:  
                     usuarios.append(username)
                     print(f"{GREEN}[*] Usuarios encontrado: {username}{RESET}")
                     time.sleep(1)
@@ -145,7 +145,7 @@ def main():
                 break
             elif respuesta in ['n', 'no']:
                 print(f"{RED}[!] Por favor, responda 's' o 'n'. {RESET}")
-                break  # Corregido: añadido break para salir del bucle
+                break  
             else:
                 print(f"{RED}[!] No encuentra usuarios pa guardar{RESET}")
     else:
