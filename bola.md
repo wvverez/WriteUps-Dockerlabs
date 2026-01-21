@@ -1,16 +1,16 @@
-# CTF:
+# ⚙️ CTF:
 
 <img width="1218" height="720" alt="image" src="https://github.com/user-attachments/assets/7c4930f1-d325-42be-ad23-0e89dd886a37" />
 
-Nombre: Bola
+♟️ Nombre: Bola
 
-SO: Linux
+🐧 SO: Linux
 
-Dificultad: Medio
+🛜 Dificultad: Medio
 
-Creadores: El pinguino de Mario
+👥 Creadores: El pinguino de Mario
 
-# Enumeración 
+# 📋 Enumeración 
 
 Vamos a empezar con un sencillo escaneo nmap, para enumerar primeramente puertos abiertos que corren en la máquina.
 
@@ -74,6 +74,8 @@ Vemos que nos está pidiendo proporcionar un usuario válido vamos a hacer fuzzi
 
 Encontramos 3 rutas potenciales a partir del login y de console no fui capaz de explotar nada aunque en /user vemos que ya nos está pidiendo por usuarios válidos.
 <img width="1022" height="468" alt="image" src="https://github.com/user-attachments/assets/21f45f25-27ab-4edd-8f1c-9f65fa995ca0" />
+
+# 🐍 Intrusión 
 
 Probando un par de cosas como administrator inocentemente probé con 01 y encontré un usuario "Alice" así que lo siguiente que haré será crearme un script en Python para de este modo scrapear todos los usuarios internos del sistema. El código es este:
 <pre>
@@ -175,6 +177,8 @@ Ya que tenemos posibles usuarios del sistema vamos a realizar un ataque de fuerz
 
 Vemos que hemos conseguido la contraseña del usuario Steven vamos a probar a acceder por ssh.
 <img width="325" height="107" alt="image" src="https://github.com/user-attachments/assets/56b4399e-421b-4452-b191-f6765144f503" />
+
+# 🧗🏻‍♂️ Escalada de privilegios
 
 Si filtramos por los archivos ocultos del sistema vemos que no tiene enlazado el bash history al /dev/null 
 
