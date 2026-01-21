@@ -54,8 +54,18 @@ Nmap done: 1 IP address (1 host up) scanned in 11.85 seconds
   </code>
 </pre>
 
-Vemos que tenemos Openssh 9.2p1 por ahí no podemos hacer mucho vamos a acceder desde el navegador al puerto 12345 donde corre Werkzeug
+Vemos que tenemos Openssh 9.2p1 por ahí no podemos hacer mucho vamos a acceder desde el navegador al puerto 12345 donde corre Werkzeug.
 
+<img width="838" height="357" alt="image" src="https://github.com/user-attachments/assets/c03cbf11-bee5-4d8d-9a72-c0ad56930f50" />
+
+Vemos que nos está pidiendo proporcionar un usuario válido vamos a hacer fuzzing web para encontrar posibles rutas potenciales.
+
+<img width="1422" height="433" alt="image" src="https://github.com/user-attachments/assets/472e93b9-1105-499b-85ce-0d15bac7cc7a" />
+
+Encontramos 3 rutas potenciales a partir del login y de console no fui capaz de explotar nada aunque en /user vemos que ya nos está pidiendo por usuarios válidos.
+<img width="1022" height="468" alt="image" src="https://github.com/user-attachments/assets/21f45f25-27ab-4edd-8f1c-9f65fa995ca0" />
+
+Probando un par de cosas como administrator inocentemente probé con 01 y encontré un usuario "Alice" así que lo siguiente que haré será crearme un script en Python para de este modo scrapear todos los usuarios internos del sistema. El código es este:
 <pre>
   <code>
 #!/usr/bin/env python3
