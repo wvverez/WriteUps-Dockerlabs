@@ -203,7 +203,7 @@ Vemos 5 hashes en md5 podemos decodificarnoslo y acceder como cualquier otro usu
 
 <img width="407" height="127" alt="image" src="https://github.com/user-attachments/assets/3acbb08c-8e22-4d7d-a9c9-40e58e6ccdac" />
 
-Vamos a listar permisos sudoers.
+Vamos a listar permisos sudoers. Y vemos que podemos ejecutar como root sin proporcionar contraseña el binario "unzip"
 
 <img width="992" height="191" alt="image" src="https://github.com/user-attachments/assets/a8016de7-867d-4853-83fb-ece98a06d2d7" />
 
