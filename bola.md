@@ -151,3 +151,31 @@ if __name__ == "__main__":
 
 Ya que tenemos posibles usuarios del sistema vamos a realizar un ataque de fuerza bruta para ver si algún usuario tiene su misma contraseña de contraseña.
 
+<img width="1762" height="245" alt="image" src="https://github.com/user-attachments/assets/38d68374-2d45-49f4-a0f4-8dadcc240332" />
+
+Vemos que hemos conseguido la contraseña del usuario Steven vamos a probar a acceder por ssh.
+<img width="325" height="107" alt="image" src="https://github.com/user-attachments/assets/56b4399e-421b-4452-b191-f6765144f503" />
+
+Si filtramos por los archivos ocultos del sistema vemos que no tiene enlazado el bash history al /dev/null 
+
+<img width="743" height="498" alt="image" src="https://github.com/user-attachments/assets/1eded2f3-baf9-4f7b-acb8-a0ce0c939e88" />
+
+Vemos las credenciales para acceder a la DB vamos a listar las tablas y ver el contenido.
+
+<img width="885" height="722" alt="image" src="https://github.com/user-attachments/assets/027c7b1d-186f-4290-97f2-3c4ee2732825" />
+
+Vemos 5 hashes en md5 podemos decodificarnoslo y acceder como cualquier otro usuario en mi caso con baluadmin que me parece el más interesante su hash md5 decodificado es "estrella" vamos a probar a acceder.
+
+<img width="407" height="127" alt="image" src="https://github.com/user-attachments/assets/3acbb08c-8e22-4d7d-a9c9-40e58e6ccdac" />
+
+Vamos a listar permisos sudoers.
+
+<img width="992" height="191" alt="image" src="https://github.com/user-attachments/assets/a8016de7-867d-4853-83fb-ece98a06d2d7" />
+
+Vamos a buscar algún zip en el sistema.
+
+Encontramos lo siguiente.
+
+<img width="565" height="397" alt="image" src="https://github.com/user-attachments/assets/973aaeb8-1f59-4d36-bcb7-c550fa937bdf" />
+
+Salud ^^
