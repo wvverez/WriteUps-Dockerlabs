@@ -93,8 +93,8 @@ Encontramos 3 rutas potenciales a partir del login y de console no fui capaz de 
 <img width="1022" height="468" alt="image" src="https://github.com/user-attachments/assets/21f45f25-27ab-4edd-8f1c-9f65fa995ca0" />
 
 # 🐍 Intrusión 
-
-Probando un par de cosas como administrator inocentemente probé con 01 y encontré un usuario "Alice" así que lo siguiente que haré será crearme un script en Python para de este modo scrapear todos los usuarios internos del sistema. El código es este:
+> [!IMPORTANT]
+> Probando un par de cosas como administrator inocentemente probé con 01 y encontré un usuario "Alice" así que lo siguiente que haré será crearme un script en Python para de este modo scrapear todos los usuarios internos del sistema. El código es este:
 <pre>
   <code>
 #!/usr/bin/env python3
