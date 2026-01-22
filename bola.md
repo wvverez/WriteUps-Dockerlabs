@@ -29,6 +29,8 @@ MAC Address: 02:42:AC:11:00:02 (Unknown)
 
 Nmap done: 1 IP address (1 host up) scanned in 1.15 seconds
 
+## 👾 Parámetros
+
   </code>
 </pre>
 
