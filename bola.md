@@ -51,6 +51,7 @@ Nmap done: 1 IP address (1 host up) scanned in 1.15 seconds
 
 
 
+[!WARNING]
 Bien vemos los puertos 22 donde corre ssh y el 12345 donde corre netbus. Vamos a realizar un segundo escaneo para enumerar versiones y servicios que corren en dichos puertos.
 
 <pre>
