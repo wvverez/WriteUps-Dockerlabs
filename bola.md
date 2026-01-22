@@ -96,8 +96,6 @@ Encontramos 3 rutas potenciales a partir del login y de console no fui capaz de 
 > [!NOTE]
 > Probando un par de cosas como administrator inocentemente probé con 01 y encontré un usuario "Alice" así que lo siguiente que haré será crearme un script en Python para de este modo scrapear todos los usuarios internos del sistema a través de el ID y guardarmelos en un archivo para despues tener un abanico de ataque más amplio. El script es este:
 
-## Script
-
 <pre>
   <code>
 #!/usr/bin/env python3
