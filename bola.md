@@ -6,7 +6,7 @@
 
 🐧 SO: Linux
 
-🛜 Dificultad: Medio
+🛜 Dificultad: MEDIO
 
 👥 Creadores: El pinguino de Mario
 
