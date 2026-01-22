@@ -34,7 +34,8 @@ Nmap done: 1 IP address (1 host up) scanned in 1.15 seconds
 </pre>
 
 ## 👾 Parámetros 
-
+<pre>
+  <code>
 -p- : Escaneo de todos los puertos (Los 65535)
 
 --open: Para que nos muestre unicamente los que esten abiertos.
@@ -48,7 +49,8 @@ Nmap done: 1 IP address (1 host up) scanned in 1.15 seconds
 -Pn : No realize host discovering ya que suponemos que la maquina esta levantada
 
 -oN : guardar el reporte en un archivo 
-
+</code>
+</pre>
 
 
 > [!WARNING]
