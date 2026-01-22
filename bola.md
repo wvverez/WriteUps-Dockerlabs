@@ -182,7 +182,7 @@ if __name__ == "__main__":
 
 <img width="1605" height="743" alt="image" src="https://github.com/user-attachments/assets/85fda5a0-bb1c-41a5-9e99-b328dce386a6" />
 
-Ya que tenemos posibles usuarios del sistema vamos a realizar un ataque de fuerza bruta para ver si algún usuario tiene su misma contraseña de contraseña.
+Ya que tenemos posibles usuarios del sistema vamos a realizar un ataque de fuerza bruta para ver si algún usuario tiene su mismo usuario de contraseña.
 
 <img width="1762" height="245" alt="image" src="https://github.com/user-attachments/assets/38d68374-2d45-49f4-a0f4-8dadcc240332" />
 
@@ -207,9 +207,15 @@ Vamos a listar permisos sudoers. Y vemos que podemos ejecutar como root sin prop
 
 <img width="992" height="191" alt="image" src="https://github.com/user-attachments/assets/a8016de7-867d-4853-83fb-ece98a06d2d7" />
 
-Vamos a buscar algún zip en el sistema.
+Vamos a buscar algún zip en el sistema. 
 
-Encontramos lo siguiente.
+<pre>
+  <code>
+  find / -nane "*.zip" 2>/dev/null
+  </code>
+  </pre>
+
+Encontramos el siguiente zip el cual contiene la contraseña del usuario "root".
 
 <img width="565" height="397" alt="image" src="https://github.com/user-attachments/assets/973aaeb8-1f59-4d36-bcb7-c550fa937bdf" />
 
