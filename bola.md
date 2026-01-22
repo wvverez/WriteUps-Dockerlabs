@@ -197,7 +197,8 @@ Vemos que hemos conseguido la contraseña del usuario Steven vamos a probar a ac
 
 # 🧗🏻‍♂️ Escalada de privilegios
 
-Si filtramos por los archivos ocultos del sistema vemos que no tiene enlazado el bash history al /dev/null 
+> [!CAUTION]
+> Si filtramos por los archivos ocultos del sistema vemos que no tiene enlazado el bash history al /dev/null 
 
 <img width="743" height="498" alt="image" src="https://github.com/user-attachments/assets/1eded2f3-baf9-4f7b-acb8-a0ce0c939e88" />
 
