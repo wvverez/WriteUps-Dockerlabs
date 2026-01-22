@@ -221,7 +221,7 @@ Vamos a buscar algún zip en el sistema.
   </code>
   </pre>
 
-> [!IMPORTANT]
+> [!CAUTION]
 > Encontramos el siguiente zip el cual contiene la contraseña del usuario "root".
 
 <img width="565" height="397" alt="image" src="https://github.com/user-attachments/assets/973aaeb8-1f59-4d36-bcb7-c550fa937bdf" />
