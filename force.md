@@ -91,10 +91,8 @@ Accediendo desde el navegador podemos comprobar que se trata de un panel de logi
 
   <pre>
     <code>
-      
 ┌──(root㉿kali)-[/home/kali/Dockerlabs]
 └─# hydra -l admin -P rockyou.txt2 172.17.0.3 http-post-form "/index.php:username=^USER^&password=^PASS^:Invalid credentials."
-
     </code>
   </pre>
 
