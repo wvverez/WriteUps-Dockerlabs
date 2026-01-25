@@ -103,16 +103,16 @@ Accediendo desde el navegador podemos comprobar que se trata de un panel de logi
 - Al menos un digito
 - Al menos 10 caracteres
 
-  Si probamos a poner un usuario cualquiera por ejemplo "wvverez" ya nos dice que no existe aunque si probamos con un usuario existente como fue el caso de "admin" nos dice que la contraseña es incorrecta.
-  Lo siguiente que haremos será hacer fuerza bruta al panel de login con el usuario admin y con los requisitos que nos piden.
+Si probamos a poner un usuario cualquiera por ejemplo "wvverez" ya nos dice que no existe aunque si probamos con un usuario existente como fue el caso de "admin" nos dice que la contraseña es incorrecta.
+Lo siguiente que haremos será hacer fuerza bruta al panel de login con el usuario admin y con los requisitos que nos piden.
 
-  Pero antes de ello para reducir el trabajo nos haremos un diccionario en el que solo haya palabras con los requisitos que pide el panel de login, para ello:
+Pero antes de ello para reducir el trabajo nos haremos un diccionario en el que solo haya palabras con los requisitos que pide el panel de login, para ello:
 
-  <pre>
-    <code>
+<pre>
+  <code>
       tr -d '\r' < rockyou.txt | awk 'length($0)>=10 && /[A-Z]/ && /[a-z]/ && /[0-9]/' | sponge rockyou.txt2
-    </code>
-  </pre>
+  </code>
+</pre>
 
   Bien ahora haremos fuerza bruta al panel de login con el nuevo diccionario.
 
