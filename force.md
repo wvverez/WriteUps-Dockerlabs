@@ -110,7 +110,7 @@ Accediendo desde el navegador podemos comprobar que se trata de un panel de logi
 
   <pre>
     <code>
-      tr -d '\r' < rockyou.txt | awk 'length($0)>=10 && /[A-Z]/ && /[a-z]/ && /[0-9]/' | sponge new_rockyou.txt
+      tr -d '\r' < rockyou.txt | awk 'length($0)>=10 && /[A-Z]/ && /[a-z]/ && /[0-9]/' | sponge rockyou.txt2
     </code>
   </pre>
 
