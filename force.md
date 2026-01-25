@@ -2,10 +2,16 @@
 
 <img width="1152" height="618" alt="image" src="https://github.com/user-attachments/assets/ff7a4014-ff99-476b-932d-8635a55d7e83" />
 
+♟️ Nombre: Force
+
+🐧 SO: Linux
+
+🛜 Dificiltad: DIFICIL
+
+👥 Creador: kvzlx
 
 
-
-# ENUMERACIÓN 
+# 📋 ENUMERACIÓN 
 
 Vamos a empezar lanzando trazas ICMP para ver si tenemos conectividad con la máquina víctima.
 
