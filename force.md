@@ -247,4 +247,19 @@ Table: users
   </code>
 </pre>
 
+Probando credenciales solo me dejo acceder por ssh como el usuario "ttttt" una vez dentro me di cuenta que no podía ejecutar comandos básicos ya que estaba en una rbash.
+
+<img width="828" height="302" alt="image" src="https://github.com/user-attachments/assets/59cc7cc0-19df-4ae6-885c-84fcad77723e" />
+<img width="931" height="635" alt="image" src="https://github.com/user-attachments/assets/69c5b5ab-08a0-421a-b369-dfcc1da69377" />
+<img width="843" height="267" alt="image" src="https://github.com/user-attachments/assets/d949ee57-2566-47f8-b230-ae7b93b2fbe0" />
+
+Probando algunas cosas me di de cuenta que realmente está muy restringida con lo cual voy a forzar la entrada por bash antes de entrar vía ssh.
+
+<img width="945" height="433" alt="image" src="https://github.com/user-attachments/assets/d17f7d8d-8eec-4610-aced-f2d916a232b4" />
+
+Bien ya tenemos una bash, vamos a listarnos permisos SUID para ver si encontramos algo interesante.
+
+<img width="891" height="365" alt="image" src="https://github.com/user-attachments/assets/725d9bac-340d-4f22-a191-cc603ff84e11" />
+
+Encontramos este permiso SUID extraño vamos a pasarnoslo a nuestra máquina para poder analizarlo mejor.
 
