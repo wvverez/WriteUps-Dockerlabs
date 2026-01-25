@@ -261,5 +261,12 @@ Bien ya tenemos una bash, vamos a listarnos permisos SUID para ver si encontramo
 
 <img width="891" height="365" alt="image" src="https://github.com/user-attachments/assets/725d9bac-340d-4f22-a191-cc603ff84e11" />
 
-Encontramos este permiso SUID extraño vamos a pasarnoslo a nuestra máquina para poder analizarlo mejor.
+Encontramos este permiso SUID extraño vamos a pasarnoslo a nuestra máquina para poder analizarlo mejor. Antes de eso si le hacemos un file vemos que es un ELF ejecutable de 32 bits.
 
+<pre>
+  <code>
+ttttt@5b855bbf2e63:~$ file /home/ttttt/bf/vuln 
+/home/ttttt/bf/vuln: setuid ELF 32-bit LSB pie executable, Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux.so.2, BuildID[sha1]=bfa7c8132e92686e0a3924f21d33a0b5fbec952d, for GNU/Linux 4.4.0, not stripped
+ttttt@5b855bbf2e63:~$ 
+  </code>
+</pre>
