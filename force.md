@@ -304,7 +304,7 @@ s.send(bytes(string, "latin-1"))
 s.recv(1024)
 
 except Exception as e:
-print("Fuzzing crashed at {} bytes".format(len(string) - len(prefix)))
+print("[*] Fuzzing crashed at {} bytes".format(len(string) - len(prefix)))
 sys.exit(0)
 
 string += "A" * 100
@@ -319,6 +319,6 @@ Una vez lo ejecutamos confirmamos que es vulnerable a BoF ya que nos crashea ent
 <code>
 ┌──(root㉿vbox)-[/home/wvverez/Dockerlabs]
 └─# python3 byte.py
-Fuzzing crashed at 100 bytes
+[*] Fuzzing crashed at 100 bytes
 </code>
 </pre>
