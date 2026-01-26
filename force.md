@@ -270,3 +270,6 @@ ttttt@5b855bbf2e63:~$ file /home/ttttt/bf/vuln
 ttttt@5b855bbf2e63:~$ 
   </code>
 </pre>
+
+Viendo esto vamos a pasarnoslo a nuestra máquina para poder probar cosas con él. 
+Usaremos el siguiente script para pasarle "A" hasta que crashee para saber si es vulnerable a buffer overflow 
