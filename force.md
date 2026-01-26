@@ -319,7 +319,7 @@ Una vez lo ejecutamos confirmamos que es vulnerable a BoF ya que nos crashea ent
 
 <pre>
 <code>
-┌──(root㉿vbox)-[/home/wvverez/Dockerlabs]
+┌──(root㉿kali)-[/home/wvverez/Dockerlabs]
 └─# python3 byte.py
 [*] Fuzzing crashed at 100 bytes
 </code>
