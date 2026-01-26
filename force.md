@@ -263,6 +263,7 @@ Bien ya tenemos una bash, vamos a listarnos permisos SUID para ver si encontramo
 
 Encontramos este permiso SUID extraño vamos a pasarnoslo a nuestra máquina para poder analizarlo mejor. Antes de eso si le hacemos un file vemos que es un ELF ejecutable de 32 bits.
 
+# 🫆 Buffer Overflow 
 <pre>
   <code>
 ttttt@5b855bbf2e63:~$ file /home/ttttt/bf/vuln 
@@ -307,5 +308,15 @@ sys.exit(0)
 string += "A" * 100
 time.sleep(1)
 
+</code>
+</pre>
+
+Una vez lo ejecutamos confirmamos que es vulnerable a BoF ya que nos crashea entre 0-100 bytes
+
+<pre>
+<code>
+┌──(root㉿vbox)-[/home/wvverez/Dockerlabs]
+└─# python3 byte.py
+Fuzzing crashed at 100 bytes
 </code>
 </pre>
