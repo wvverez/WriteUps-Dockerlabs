@@ -260,7 +260,7 @@ Probando algunas cosas me di de cuenta que realmente está muy restringida con l
 
 <img width="945" height="433" alt="image" src="https://github.com/user-attachments/assets/d17f7d8d-8eec-4610-aced-f2d916a232b4" />
 
-## 🫆 BUFFER OVERFLOW
+# 🫆 BUFFER OVERFLOW
 
 Bien ya tenemos una bash, vamos a listarnos permisos SUID para ver si encontramos algo interesante.
 
