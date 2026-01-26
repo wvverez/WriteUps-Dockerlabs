@@ -96,6 +96,8 @@ Nmap done: 1 IP address (1 host up) scanned in 19.97 seconds
   </code>
 </pre>
 
+# 💣 INTRUSION 
+
 Accediendo desde el navegador podemos comprobar que se trata de un panel de login en el cual primeramente nos salta un popup con algunos parametros que debe tener la contraseña.
 
 - Uppercase letter
