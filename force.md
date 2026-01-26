@@ -50,26 +50,27 @@ Nmap done: 1 IP address (1 host up) scanned in 1.25 seconds
   </code>
 </pre>
 
-## Parámetros
+## 👾 Parámetros
 <pre>
   <code>
--p- : Escaneo de todos los puertos (Los 65535)
+✅ -p- : Escaneo de todos los puertos (Los 65535)
 
---open: Para que muestre únicamente los puertos que esteán abiertos.
+✅ --open: Para que muestre únicamente los puertos que esteán abiertos.
 
--sS: Para hacer el escaneo sigiloso y sobre todo más rápido.
+✅ -sS: Para hacer el escaneo sigiloso y sobre todo más rápido.
 
---min-rate 5000: Para indicarle que no vaya más despacio que 5000 paquetes por segundo
+✅ --min-rate 5000: Para indicarle que no vaya más despacio que 5000 paquetes por segundo
 
--n: Para indicarle que no queremos que haga resolución DNS es decir que no intente convertir direcciones IP en dominios.
+✅ -n: Para indicarle que no queremos que haga resolución DNS es decir que no intente convertir direcciones IP en dominios.
 
--Pn: Para que no realize host discovering ya que suponemos que la máquina está levantada
+✅ -Pn: Para que no realize host discovering ya que suponemos que la máquina está levantada
 
--oN: guardar el reporte en un archivo
-
-Vemos que tenemos 2 puertos abiertos el 22 donde corre ssh y el 80 donde corre http. Vamos a enumerar versiones y servicios que corren en cada puerto.
+✅ -oN: guardar el reporte en un archivo
 </code>
 </pre>
+
+Vemos que tenemos 2 puertos abiertos el 22 donde corre ssh y el 80 donde corre http. Vamos a enumerar versiones y servicios que corren en cada puerto.
+
 
 <pre>
   <code>
