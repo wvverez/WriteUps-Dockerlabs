@@ -260,13 +260,14 @@ Probando algunas cosas me di de cuenta que realmente está muy restringida con l
 
 <img width="945" height="433" alt="image" src="https://github.com/user-attachments/assets/d17f7d8d-8eec-4610-aced-f2d916a232b4" />
 
+## 🫆 BUFFER OVERFLOW
+
 Bien ya tenemos una bash, vamos a listarnos permisos SUID para ver si encontramos algo interesante.
 
 <img width="891" height="365" alt="image" src="https://github.com/user-attachments/assets/725d9bac-340d-4f22-a191-cc603ff84e11" />
 
 Encontramos este permiso SUID extraño vamos a pasarnoslo a nuestra máquina para poder analizarlo mejor. Antes de eso si le hacemos un file vemos que es un ELF ejecutable de 32 bits.
 
-# 🫆 Buffer Overflow 
 <pre>
   <code>
 ttttt@5b855bbf2e63:~$ file /home/ttttt/bf/vuln 
