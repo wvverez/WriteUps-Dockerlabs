@@ -130,12 +130,14 @@ Nmap done: 1 IP address (1 host up) scanned in 19.97 seconds
     </code>
   </pre>
 
-De esta forma conseguimos las credenciales para poder loguearnos en el panel de login. Una vez nos logueamos vemos un panel para agregar notas si agregamos una comilla simple vemos que estamos alterando el sistema ya que nos da un error de SQL.
+> [!NOTE]
+> De esta forma conseguimos las credenciales para poder loguearnos en el panel de login. Una vez nos logueamos vemos un panel para agregar notas si agregamos una comilla simple vemos que estamos alterando el sistema ya que nos da un error de SQL.
 
 <img width="691" height="457" alt="image" src="https://github.com/user-attachments/assets/50fd4a3d-f518-48c9-8646-69173d3eb30f" />
 <img width="1885" height="162" alt="image" src="https://github.com/user-attachments/assets/17a785d0-995b-4bbb-9060-0594b24fddbe" />
 
-Bien lo siguiente que haremos será dar uso de SQLmap para intentar conseguir bases de datos existentes usaremos el siguiente comando.
+> [!IMPORTANT]
+> Bien lo siguiente que haremos será dar uso de SQLmap para intentar conseguir bases de datos existentes usaremos el siguiente comando.
 
 <pre>
   <code>
