@@ -29,7 +29,9 @@ rtt min/avg/max/mdev = 0.049/0.053/0.057/0.004 ms
 
   </code>
 </pre>
-Vemos que efectivamente tenemos conectividad con la máquina víctima basándonos en el ttl de 64 sabemos que estamos ante una máquina con SO Linux, si fuera Windows estaría cerca de 128 o 128 aunque el ttl es manipulable pero normalmente suele ser así.
+
+> [!NOTE]
+> Vemos que efectivamente tenemos conectividad con la máquina víctima basándonos en el ttl de 64 sabemos que estamos ante una máquina con SO Linux, si fuera Windows estaría cerca de 128 o 128 aunque el ttl es manipulable pero normalmente suele ser así.
 
 Vamos a realizar un escaneo de red para enumerar puertos abiertos y servicios que corren.
 
