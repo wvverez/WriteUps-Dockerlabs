@@ -109,10 +109,8 @@ Nmap done: 1 IP address (1 host up) scanned in 19.97 seconds
 > - Lowercase letter
 > - Al menos un digito
 > - Al menos 10 caracteres
-
 > Si probamos a poner un usuario cualquiera por ejemplo "wvverez" ya nos dice que no existe aunque si probamos con un usuario existente como fue el caso de "admin" nos dice que la contraseña es incorrecta.
 > Lo siguiente que haremos será hacer fuerza bruta al panel de login con el usuario admin y con los requisitos que nos piden.
-
 > Pero antes de ello para reducir el trabajo nos haremos un diccionario en el que solo haya palabras con los requisitos que pide el panel de login, para ello:
 
 <pre>
