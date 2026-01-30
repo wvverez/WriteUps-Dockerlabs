@@ -364,7 +364,7 @@ Vamos a pasarlo a `pattern ofsset` el resultado.
   </code>
 </pre>
 
-Una vez tenemos el offset, necesitamos buscar un shellcode util. Necesitamos que el shellcode ejecute ´setuid´ para cambiarlo por el de root. y después una bash.
+Una vez tenemos el offset, necesitamos buscar un shellcode util. Necesitamos que el shellcode ejecute `setuid` para cambiarlo por el de root. y después una bash.
 Usaremos el siguiente shellcode:
 
 <pre>
