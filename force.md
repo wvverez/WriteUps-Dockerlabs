@@ -253,7 +253,7 @@ Table: users
   </code>
 </pre>
 
-Probando credenciales solo me dejo acceder por ssh como el usuario "ttttt" una vez dentro me di cuenta que no podía ejecutar comandos básicos ya que estaba en una rbash.
+Probando credenciales solo me dejo acceder por ssh como el usuario "ttttt" una vez dentro me di cuenta que no podía ejecutar comandos básicos ya que estaba en una `rbash`.
 
 <img width="828" height="302" alt="image" src="https://github.com/user-attachments/assets/59cc7cc0-19df-4ae6-885c-84fcad77723e" />
 <img width="931" height="635" alt="image" src="https://github.com/user-attachments/assets/69c5b5ab-08a0-421a-b369-dfcc1da69377" />
@@ -328,7 +328,7 @@ Una vez lo ejecutamos confirmamos que es vulnerable a BoF ya que nos crashea ent
 </code>
 </pre>
 
-Nuestro objetivo es conocer la longitud máxima antes de sobreescribir el registro EIP para ello usaremos el siguiente modulo de metasploit.
+Nuestro objetivo es conocer la longitud máxima antes de sobreescribir el registro `EIP` para ello usaremos el siguiente modulo de metasploit.
 
 <pre>
 <code>
@@ -354,7 +354,7 @@ Una vez le pasamos el pattern que generamos con el módulo de metasploit.
 </pre>
 En hexadecimal lo pasaremos con xxd
 
-Vamos a pasarlo a pattern ofsset el resultado.
+Vamos a pasarlo a `pattern ofsset` el resultado.
 
 <pre>
   <code>
@@ -373,7 +373,7 @@ Usaremos el siguiente shellcode:
   </code>
 </pre>
 
-Lo que hace exactamente este shellcode es lo siguiente:
+💡 Lo que hace exactamente este shellcode es lo siguiente:
 
 <pre>
   <code>
